@@ -16,9 +16,7 @@ public class movieController {
         model.addAttribute("title", title);
 
         String description =
-                "A thief who steals corporate secrets through dream-sharing technology. "
-              + "He is given the inverse task of planting an idea into the mind of a CEO. "
-              + "The mission becomes dangerously complex as reality blurs with dreams.";
+                "A thief who steals corporate secrets through dream-sharing technology.He is given the inverse task of planting an idea into the mind of a CEO. The mission becomes dangerously complex as reality blurs with dreams.";
 
         model.addAttribute("Description", description);
 
