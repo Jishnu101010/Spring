@@ -26,6 +26,6 @@ public class StudentController {
                 new Student(103, "Sneha Iyer", 78.6)
         );
         model.addAttribute("students", students);
-        return "studentlist";
+        return "studentslist";
     }
 }
