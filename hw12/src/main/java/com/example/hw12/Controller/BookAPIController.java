@@ -35,14 +35,14 @@ public class BookAPIController {
     }
 
    
-    @GetMapping("/{id}")
+    @GetMapping("/details{id}")
     public Book getBookById(@PathVariable Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException(id));
     }
 
   
-    @PutMapping("/{id}")
+    @PutMapping("/update{id}")
     public Book updateBook(@PathVariable Long id, @RequestBody Book updatedBook) {
 
         Book book = repository.findById(id)
@@ -58,7 +58,7 @@ public class BookAPIController {
     }
 
    
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete{id}")
     public void deleteBook(@PathVariable Long id) {
         Book book = repository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException(id));

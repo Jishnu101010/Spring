@@ -14,7 +14,7 @@ public class Book {
     private String author;
     private String genre;
     private double price;
-    private LocalDate publishedDate;
+    private String publishedDate;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -31,8 +31,8 @@ public class Book {
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
 
-    public LocalDate getPublishedDate() { return publishedDate; }
-    public void setPublishedDate(LocalDate publishedDate) {
+    public String getPublishedDate() { return publishedDate; }
+    public void setPublishedDate(String publishedDate) {
         this.publishedDate = publishedDate;
     }
 }
