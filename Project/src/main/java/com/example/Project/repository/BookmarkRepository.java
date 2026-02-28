@@ -1,11 +1,10 @@
 package com.example.Project.repository;
 
+import com.example.Project.models.Bookmark;
+import com.example.Project.models.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.Project.models.Bookmark;
-import com.example.Project.models.User;
 
 public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
 

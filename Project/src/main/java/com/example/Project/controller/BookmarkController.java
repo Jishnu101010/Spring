@@ -5,11 +5,7 @@ import java.security.Principal;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.Project.models.Bookmark;
 import com.example.Project.models.User;
@@ -29,11 +25,16 @@ public class BookmarkController {
         this.userRepository = userRepository;
     }
 
+    // ✅ LIST + SEARCH + PAGINATION
     @GetMapping("/home")
     public String list(Model model,
                        Principal principal,
                        @RequestParam(defaultValue = "0") int page,
                        @RequestParam(defaultValue = "") String q) {
+
+        if (principal == null) {
+            return "redirect:/login";
+        }
 
         User user = userRepository.findByUsername(principal.getName());
 
@@ -53,6 +54,7 @@ public class BookmarkController {
         return "bookmarks";
     }
 
+    // ✅ ADD BOOKMARK
     @PostMapping("/add")
     public String add(@RequestParam String title,
                       @RequestParam String url,
@@ -70,17 +72,27 @@ public class BookmarkController {
         return "redirect:/bookmarks/home";
     }
 
+    // 🔥 FIXED UPDATE (NOW PASSES USER)
     @PostMapping("/edit/{id}")
     public String edit(@PathVariable Long id,
                        @RequestParam String title,
-                       @RequestParam String url) {
-        bookmarkService.update(id, title, url);
+                       @RequestParam String url,
+                       Principal principal) {
+
+        User user = userRepository.findByUsername(principal.getName());
+        bookmarkService.update(id, title, url, user);
+
         return "redirect:/bookmarks/home";
     }
 
+    // 🔥 FIXED DELETE (NOW PASSES USER)
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
-        bookmarkService.delete(id);
+    public String delete(@PathVariable Long id,
+                         Principal principal) {
+
+        User user = userRepository.findByUsername(principal.getName());
+        bookmarkService.delete(id, user);
+
         return "redirect:/bookmarks/home";
     }
 }
