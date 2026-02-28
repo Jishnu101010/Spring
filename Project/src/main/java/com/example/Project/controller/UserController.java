@@ -12,22 +12,23 @@ import com.example.Project.service.UserService;
 
 @Controller
 public class UserController {
-    
+
     @Autowired
     private UserService userService;
-    
+
     @GetMapping("/signup")
     public String getRegistrationPage(@ModelAttribute("user") UserDto userDto) {
         return "register";
     }
-    
+
     @PostMapping("/signup")
-    public String saveUser(@ModelAttribute("user") UserDto userDto, Model model) {
+    public String saveUser(@ModelAttribute("user") UserDto userDto,
+                           Model model) {
         userService.save(userDto);
-        model.addAttribute("message", "Registered Successfuly!");
+        model.addAttribute("message", "Registered Successfully!");
         return "register";
     }
-    
+
     @GetMapping("/login")
     public String login() {
         return "login";

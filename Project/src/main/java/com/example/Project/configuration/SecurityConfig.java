@@ -13,41 +13,46 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.example.Project.service.CustomUserDetailsService;
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-   
-   
+
     @Autowired
-    CustomUserDetailsService customUserDetailsService;
-   
+    private CustomUserDetailsService customUserDetailsService;
+
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-   
-   
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(c -> c.disable())
-            .authorizeHttpRequests(request -> request
-                .requestMatchers("/signup", "/css/**", "/js/**").permitAll() 
-                .anyRequest().authenticated())
-            .formLogin(form -> form
-                .loginPage("/login").loginProcessingUrl("/login")
-                .defaultSuccessUrl("/bookmarks", true).permitAll())
-            .logout(form -> form
-                .invalidateHttpSession(true).clearAuthentication(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login?logout").permitAll());
-           
+
+        http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/signup", "/login", "/css/**", "/js/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/bookmarks/home", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login?logout")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .permitAll()
+                );
+
         return http.build();
     }
 
-
     @Autowired
-    public void configure (AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
-    }     
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
 }

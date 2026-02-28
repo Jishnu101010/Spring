@@ -9,16 +9,19 @@ import com.example.Project.models.User;
 import com.example.Project.repository.UserRepository;
 
 @Service
-public class UserService{
-   
+public class UserService {
+
     @Autowired
     private PasswordEncoder passwordEncoder;
-   
+
     @Autowired
     private UserRepository userRepository;
 
     public User save(UserDto userDto) {
-        User user = new User(userDto.getusername(), passwordEncoder.encode(userDto.getPassword()) );
+        User user = new User(
+                userDto.getUsername(),
+                passwordEncoder.encode(userDto.getPassword())
+        );
         return userRepository.save(user);
     }
 }

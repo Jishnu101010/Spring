@@ -1,22 +1,23 @@
 package com.example.Project.Dto;
 
 public class UserDto {
-   
+
     private String username;
     private String password;
     private String fullname;
-   
+
+    public UserDto() {}
+
     public UserDto(String username, String password) {
-        super();
         this.username = username;
         this.password = password;
     }
 
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setEmail(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -28,5 +29,11 @@ public class UserDto {
         this.password = password;
     }
 
-   
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
 }

@@ -1,16 +1,16 @@
 package com.example.Project.service;
 
-import com.example.Project.exception.BookmarklimitException;
-import com.example.Project.models.Bookmark;
-import com.example.Project.models.User;
-import com.example.Project.repository.BookmarkRepository;
+import java.time.LocalDateTime;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import com.example.Project.exception.BookmarklimitException;
+import com.example.Project.models.Bookmark;
+import com.example.Project.models.User;
+import com.example.Project.repository.BookmarkRepository;
 
 @Service
 public class BookmarkService {
@@ -21,6 +21,7 @@ public class BookmarkService {
         this.bookmarkRepository = bookmarkRepository;
     }
 
+    // ✅ ADD BOOKMARK WITH LIMIT
     public Bookmark addBookmark(User user, String title, String url) {
 
         if (bookmarkRepository.countByUser(user) >= 5) {
@@ -36,6 +37,7 @@ public class BookmarkService {
         return bookmarkRepository.save(bookmark);
     }
 
+    // ✅ LIST WITH PAGINATION
     public Page<Bookmark> list(User user, int page, int size) {
         return bookmarkRepository.findByUser(
                 user,
@@ -43,6 +45,7 @@ public class BookmarkService {
         );
     }
 
+    // ✅ SEARCH
     public Page<Bookmark> search(User user, String q, int page, int size) {
         return bookmarkRepository
                 .findByUserAndTitleContainingIgnoreCaseOrUserAndUrlContainingIgnoreCase(
@@ -50,14 +53,34 @@ public class BookmarkService {
                 );
     }
 
-    public Bookmark update(Long id, String title, String url) {
-        Bookmark bookmark = bookmarkRepository.findById(id).orElseThrow();
+    // 🔐 SAFE UPDATE (VERY IMPORTANT)
+    public Bookmark update(Long id, String title, String url, User user) {
+
+        Bookmark bookmark = bookmarkRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Bookmark not found"));
+
+        // ✅ ownership check
+        if (!bookmark.getUser().getId().equals(user.getId())) {
+            throw new RuntimeException("Unauthorized action");
+        }
+
         bookmark.setTitle(title);
         bookmark.setUrl(url);
+
         return bookmarkRepository.save(bookmark);
     }
 
-    public void delete(Long id) {
-        bookmarkRepository.deleteById(id);
+    // 🔐 SAFE DELETE
+    public void delete(Long id, User user) {
+
+        Bookmark bookmark = bookmarkRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Bookmark not found"));
+
+        // ✅ ownership check
+        if (!bookmark.getUser().getId().equals(user.getId())) {
+            throw new RuntimeException("Unauthorized action");
+        }
+
+        bookmarkRepository.delete(bookmark);
     }
 }
