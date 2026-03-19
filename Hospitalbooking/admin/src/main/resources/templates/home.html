@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+
+body{
+background:#f4f6f9;
+}
+
+.custom-card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+padding:25px;
+text-align:center;
+transition:0.3s;
+height:180px;
+}
+
+.custom-card:hover{
+transform:translateY(-5px);
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+.card-title{
+font-weight:600;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.card-text{
+font-size:14px;
+color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<a class="navbar-brand" th:href="@{/home}">Hospital Admin</a>
+
+<ul class="navbar-nav mr-auto">
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/home}">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/doctors}">Doctors</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/users}">Users</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/appointments}">Appointments</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" th:href="@{/reports}">Reports</a>
+</li>
+
+</ul>
+
+<button class="btn btn-danger">Logout</button>
+
+</nav>
+
+<div class="container mt-5">
+
+<h3 class="text-center mb-5">Admin Control Panel</h3>
+
+<div class="row">
+
+<div class="col-md-3">
+<a th:href="@{/doctors}" style="text-decoration:none;">
+<div class="custom-card">
+<h5 class="card-title">Doctors</h5>
+<p class="card-text">
+Manage doctor profiles, specialization, and availability details.
+</p>
+</div>
+</a>
+</div>
+
+<div class="col-md-3">
+<a th:href="@{/users}" style="text-decoration:none;">
+<div class="custom-card">
+<h5 class="card-title">Users</h5>
+<p class="card-text">
+View registered patients and manage their profile information.
+</p>
+</div>
+</a>
+</div>
+
+<div class="col-md-3">
+<a th:href="@{/appointments}" style="text-decoration:none;">
+<div class="custom-card">
+<h5 class="card-title">Appointments</h5>
+<p class="card-text">
+Track bookings, schedules, and manage appointment status.
+</p>
+</div>
+</a>
+</div>
+
+<div class="col-md-3">
+<a th:href="@{/reports}" style="text-decoration:none;">
+<div class="custom-card">
+<h5 class="card-title">Reports</h5>
+<p class="card-text">
+Analyze doctor performance and appointment statistics.
+</p>
+</div>
+</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

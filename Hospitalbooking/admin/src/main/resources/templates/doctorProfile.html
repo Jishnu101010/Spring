@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Doctor Profile</title>
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+
+body{
+background:#f4f6f9;
+}
+
+.profile-card{
+max-width:900px;
+margin:auto;
+margin-top:50px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+background:white;
+padding:30px;
+}
+
+.profile-img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #007bff;
+}
+
+.label{
+font-weight:bold;
+color:#333;
+}
+
+.section-title{
+font-weight:600;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="home.html">Hospital Admin</a>
+
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+<li class="nav-item"><a class="nav-link" href="users.html">Users</a></li>
+<li class="nav-item"><a class="nav-link" href="appointments.html">Appointments</a></li>
+<li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+</ul>
+
+<button class="btn btn-danger">Logout</button>
+</nav>
+
+<div class="container">
+
+<div class="profile-card">
+
+<div class="row">
+
+<div class="col-md-4 text-center">
+
+<img src="C:\Users\Lenovo\Downloads\DR.roy.webp" class="profile-img">
+
+<h4 class="mt-3">Dr. Roy</h4>
+<p class="text-muted">Cardiologist</p>
+
+</div>
+
+<div class="col-md-8">
+
+<div class="row">
+
+<div class="col-md-6">
+<p><span class="label">Experience:</span> 10 Years</p>
+<p><span class="label">Qualification:</span> MBBS, MD</p>
+<p><span class="label">Email:</span> drroy@gmail.com</p>
+<p><span class="label">Phone:</span> 9876543210</p>
+</div>
+
+<div class="col-md-6">
+<p><span class="label">Consultation Fee:</span> ₹500</p>
+<p><span class="label">Available Days:</span> Mon - Sat</p>
+<p><span class="label">Available Time:</span> 10 AM - 4 PM</p>
+<p><span class="label">Address:</span> Chennai</p>
+</div>
+
+</div>
+
+<hr>
+
+<h5 class="section-title">About Doctor</h5>
+
+<p>
+Dr. Roy is an experienced cardiologist with over 10 years of experience 
+in treating heart-related conditions. He is known for his patient-friendly 
+approach and accurate diagnosis.
+</p>
+
+<div class="mt-3">
+
+<button class="btn btn-warning">Edit</button>
+<a href="doctors.html" class="btn btn-secondary">Back</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

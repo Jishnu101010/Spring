@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Appointments</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="home.html">Hospital Admin</a>
+	<ul class="navbar-nav mr-auto">
+	<li class="nav-item">
+	<a class="nav-link" th:href="@{/home}">Home</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="dashboard.html">Dashboard</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="doctors.html">Doctors</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="users.html">Users</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="appointments.html">Appointments</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="reports.html">Reports</a>
+	</li>
+	</ul>
+<button class="btn btn-danger">Logout</button>
+</nav>
+	
+<div class="container mt-4">
+
+<h3>Appointments</h3>
+
+<table class="table table-bordered">
+
+<tr>
+<th>User</th>
+<th>Doctor</th>
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Rahul</td>
+<td>Dr Roy</td>
+<td>20 June</td>
+<td>10:30 AM</td>
+<td><span class="badge badge-success">Confirmed</span></td>
+</tr>
+
+<tr>
+<td>Jishnu</td>
+<td>Dr Roy</td>
+<td>21 June</td>
+<td>2:00 PM</td>
+<td><span class="badge badge-warning">Pending</span></td>
+</tr>
+
+</table>
+<button class="btn btn-secondary" onclick="history.back()">← Back</button>
+
+</div>
+
+</body>
+</html>

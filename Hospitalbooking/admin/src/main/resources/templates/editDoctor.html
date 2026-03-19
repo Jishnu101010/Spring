@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Doctor</title>
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+body{background:#f4f6f9;}
+
+.form-card{
+max-width:900px;
+margin:auto;
+margin-top:50px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+background:white;
+padding:30px;
+}
+
+.profile-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #007bff;
+margin-bottom:10px;
+}
+
+.section-title{
+font-weight:600;
+margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="home.html">Hospital Admin</a>
+<button class="btn btn-danger">Logout</button>
+</nav>
+
+<div class="container">
+
+<div class="form-card">
+
+<h3>Edit Doctor</h3>
+
+<form>
+
+<div class="text-center mb-3">
+<img src="images/dr_roy.webp" class="profile-img">
+<br>
+<input type="file" class="form-control mt-2">
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+<input class="form-control mb-3" value="Dr Roy">
+<input class="form-control mb-3" value="Cardiology">
+<input class="form-control mb-3" value="10 Years">
+<input class="form-control mb-3" value="MBBS, MD">
+<input class="form-control mb-3" value="drroy@gmail.com">
+<input class="form-control mb-3" value="9876543210">
+</div>
+
+<div class="col-md-6">
+<input class="form-control mb-3" value="500">
+<input class="form-control mb-3" value="Mon - Sat">
+<input class="form-control mb-3" value="10 AM - 4 PM">
+<input class="form-control mb-3" value="Chennai">
+</div>
+
+</div>
+
+<h5 class="section-title">About Doctor</h5>
+<textarea class="form-control mb-3">
+Experienced cardiologist with 10+ years...
+</textarea>
+
+<button class="btn btn-primary">Update</button>
+<a href="doctors.html" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
