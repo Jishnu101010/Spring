@@ -28,7 +28,7 @@ function DoctorRoy() {
           <p><b>Experience:</b> 15+ Years</p>
           <p><b>Education:</b> MBBS, MD (Cardiology)</p>
           <p><b>Hospital:</b> CityCare Hospital</p>
-          <p><b>Languages:</b> English, Tamil</p>
+          <p><b>Languages:</b> English, Malayalam</p>
         </div>
       </div>
 

@@ -24,7 +24,7 @@ function DoctorMunna() {
           <p><b>Experience:</b> 10+ Years</p>
           <p><b>Education:</b> MBBS</p>
           <p><b>Hospital:</b> CityCare Hospital</p>
-          <p><b>Languages:</b> English, Hindi</p>
+          <p><b>Languages:</b> English, Malayalam</p>
         </div>
       </div>
 

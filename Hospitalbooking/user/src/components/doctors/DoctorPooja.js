@@ -24,7 +24,7 @@ function DoctorPooja() {
           <p><b>Experience:</b> 8+ Years</p>
           <p><b>Education:</b> MBBS, MD (Dermatology)</p>
           <p><b>Hospital:</b> CityCare Hospital</p>
-          <p><b>Languages:</b> English, Tamil</p>
+          <p><b>Languages:</b> English, Malayalam</p>
         </div>
       </div>
 
