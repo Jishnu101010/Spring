@@ -11,8 +11,9 @@ function UserProfile() {
 
       <h2 className="page-title">My Profile</h2>
 
-      <div className="profile-card-modern">
+      <div className="profile-card">
 
+        {/* LEFT SIDE */}
         <div className="profile-left">
           <img 
             src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -22,37 +23,40 @@ function UserProfile() {
           <p className="role">Patient</p>
         </div>
 
+        {/* RIGHT SIDE */}
         <div className="profile-right">
 
+          {/* Personal */}
           <div className="profile-section">
             <h3>Personal Details</h3>
-            <p><b>Age:</b> 22</p>
-            <p><b>Gender:</b> Male</p>
+            <p><span>Age:</span> 22</p>
+            <p><span>Gender:</span> Male</p>
           </div>
 
+          {/* Contact */}
           <div className="profile-section">
             <h3>Contact Information</h3>
-            <p><b>Email:</b> jishnue@gmail.com</p>
-            <p><b>Phone:</b> +91 9876543210</p>
-            <p><b>Address:</b> Trivandrum, Kerala</p>
+            <p><span>Email:</span> jishnue@gmail.com</p>
+            <p><span>Phone:</span> +91 9876543210</p>
+            <p><span>Address:</span> Trivandrum, Kerala</p>
           </div>
 
+          {/* Medical */}
           <div className="profile-section">
             <h3>Medical Information</h3>
-            <p><b>Blood Group:</b> AB+</p>
-            <p><b>Allergies:</b> None</p>
-            <p><b>Conditions:</b> None</p>
+            <p><span>Blood Group:</span> AB+</p>
+            <p><span>Allergies:</span> None</p>
+            <p><span>Conditions:</span> None</p>
           </div>
 
+          {/* Emergency */}
           <div className="profile-section">
             <h3>Emergency Contact</h3>
-            <p><b>Name:</b> Jishnu</p>
-            <p><b>Phone:</b> +91 9123456780</p>
+            <p><span>Name:</span> Jishnu</p>
+            <p><span>Phone:</span> +91 9123456780</p>
           </div>
 
-          {/* ✅ FIXED */}
           <button
-            type="button"
             className="edit-btn"
             onClick={() => navigate("/edit-profile")}
           >

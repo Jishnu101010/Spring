@@ -610,3 +610,78 @@ h1 {
 body {
   background: linear-gradient(to right, #eef2f7, #e3f2fd);
 }
+
+
+.profile-card {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.profile-left {
+  width: 30%;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.profile-left img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-left h2 {
+  margin: 10px 0 5px;
+}
+
+.role {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* RIGHT SIDE */
+.profile-right {
+  width: 70%;
+  padding: 25px;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+.profile-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.profile-section p {
+  margin: 5px 0;
+}
+
+.profile-section span {
+  font-weight: bold;
+  color: #555;
+}
+
+.edit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #043964;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #1e7e34;
+}

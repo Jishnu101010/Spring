@@ -10,28 +10,33 @@ function EditProfile() {
 
       <div className="form-container large-form">
 
+        {/* Personal Details */}
         <h3>Personal Details</h3>
-        <input type="text" placeholder="Full Name" defaultValue="Jishnu" />
-        <input type="number" placeholder="Age" defaultValue="22" />
-        
-        <select defaultValue="Male">
+        <input type="text" placeholder="Full Name" />
+        <input type="number" placeholder="Age" />
+
+        <select>
+          <option value="">Select Gender</option>
           <option>Male</option>
           <option>Female</option>
         </select>
 
+        {/* Contact Information */}
         <h3>Contact Information</h3>
-        <input type="email" defaultValue="jishnue@gmail.com" />
-        <input type="text" defaultValue="+91 9876543210" />
-        <input type="text" defaultValue="Trivandrum, Kerala" />
+        <input type="email" placeholder="Email Address" />
+        <input type="text" placeholder="Phone Number" />
+        <input type="text" placeholder="Address" />
 
+        {/* Medical Information */}
         <h3>Medical Information</h3>
-        <input type="text" defaultValue="AB+" />
-        <input type="text" defaultValue="None" />
-        <input type="text" defaultValue="" />
+        <input type="text" placeholder="Blood Group (Eg: O+, AB+)" />
+        <input type="text" placeholder="Allergies (Eg: None)" />
+        <input type="text" placeholder="Medical Conditions" />
 
+        {/* Emergency Contact */}
         <h3>Emergency Contact</h3>
-        <input type="text" defaultValue="Jishnu" />
-        <input type="text" defaultValue="+91 9123456780" />
+        <input type="text" placeholder="Contact Name" />
+        <input type="text" placeholder="Contact Phone" />
 
         <button className="filter-btn">Save Changes</button>
 
