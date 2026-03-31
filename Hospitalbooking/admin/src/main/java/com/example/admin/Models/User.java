@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false)
@@ -24,7 +24,7 @@ public class User {
     private Long phoneNo;
 
     private LocalDate dob;
-
+    private String token;
     @Column(nullable = false)
     private String password;
 
@@ -48,36 +48,65 @@ public class User {
     }
 
     // Getters
-    public Long getId() { return id; }
+    public Long getId() { 
+    	return id; 
+    	}
 
-    public String getUsername() { return username; }
+    public String getUsername() { 
+    	return username; 
+    	}
 
-    public String getEmail() { return email; }
+    public String getEmail() { 
+    	return email; 
+    	}
 
-    public String getAddress() { return address; }
+    public String getAddress() { 
+    	return address; 
+    	}
 
-    public Long getPhoneNo() { return phoneNo; }
+    public Long getPhoneNo() { 
+    	return phoneNo; 
+    	}
 
-    public LocalDate getDob() { return dob; }
+    public LocalDate getDob() { 
+    	return dob; 
+    	}
 
-    public String getPassword() { return password; }
+    public String getPassword() { 
+    	return password; }
+    public String getToken() {
+    	return token;
+    }
 
-    public List<Booking> getBookings() { return bookings; }
+    public List<Booking> getBookings() { 
+    	return bookings; }
 
     // Setters
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) { 
+    	this.id = id; }
 
-    public void setUsername(String username) { this.username = username; }
+    public void setUsername(String username) { 
+    	this.username = username; }
 
-    public void setEmail(String email) { this.email = email; }
+    public void setEmail(String email) { 
+    	this.email = email; }
 
-    public void setAddress(String address) { this.address = address; }
+    public void setAddress(String address) { 
+    	this.address = address; }
 
-    public void setPhoneNo(Long phoneNo) { this.phoneNo = phoneNo; }
+    public void setPhoneNo(Long phoneNo) { 
+    	this.phoneNo = phoneNo; 
+    	}
 
-    public void setDob(LocalDate dob) { this.dob = dob; }
+    public void setDob(LocalDate dob) { 
+    	this.dob = dob; }
 
-    public void setPassword(String password) { this.password = password; }
+    public void setPassword(String password) { 
+    	this.password = password; }
+    public void setToken(String token) {
+    	this.token = token;
+    }
 
-    public void setBookings(List<Booking> bookings) { this.bookings = bookings; }
+    public void setBookings(List<Booking> bookings) { 
+    	this.bookings = bookings; }
 }

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Doctor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -22,7 +22,7 @@ public class Doctor {
 
     @Lob
     @Column(nullable = false)
-    private byte[] photo;
+    private String photo;
 
     @Column(nullable = false)
     private String experience;
@@ -31,6 +31,7 @@ public class Doctor {
     private String about;
 
     private Integer bookCount;
+    private boolean isactive;
 
     // 🔥 One Doctor → Many Bookings
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
@@ -42,7 +43,7 @@ public class Doctor {
 
     // Parameterized Constructor
     public Doctor(String name, String specialization, String qualification,
-                  byte[] photo, String experience, String about, Integer bookCount) {
+                  String photo, String experience, String about, Integer bookCount) {
         this.name = name;
         this.specialization = specialization;
         this.qualification = qualification;
@@ -61,7 +62,7 @@ public class Doctor {
 
     public String getQualification() { return qualification; }
 
-    public byte[] getPhoto() { return photo; }
+    public String getPhoto() { return photo; }
 
     public String getExperience() { return experience; }
 
@@ -80,7 +81,7 @@ public class Doctor {
 
     public void setQualification(String qualification) { this.qualification = qualification; }
 
-    public void setPhoto(byte[] photo) { this.photo = photo; }
+    public void setPhoto(String photo) { this.photo = photo; }
 
     public void setExperience(String experience) { this.experience = experience; }
 
